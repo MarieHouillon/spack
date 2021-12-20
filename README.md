@@ -14,6 +14,7 @@ macOS, and many supercomputers. Spack is non-destructive: installing a
 new version of a package does not break existing installations, so many
 configurations of the same package can coexist.
 
+
 Spack offers a simple "spec" syntax that allows users to specify versions
 and configuration options. Package files are written in pure Python, and
 specs allow package authors to write a single script for many different
