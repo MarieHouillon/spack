@@ -28,9 +28,10 @@ class PyCarputils(PythonPackage):
 
     depends_on("git", type=("build", "run"))
 
-    # cusettings:11: DeprecationWarning:
-    # The distutils package is deprecated and slated for removal in Python 3.12.
-    conflicts("python@3.12:", when="@:oc13.0")
+    # Versions  <=oc13.0 use distutils, deprecated and slated for removal in Python 3.12.
+    # This raises a DeprecationWarning for Python 3.10:3.11
+    # that is raised when another failure appears instead of the actual failure.
+    conflicts("^python@3.12:", when="@:oc13.0")
 
     depends_on("py-numpy@1.14.5:", type=("build", "run"))
     depends_on("py-setuptools@41.6.0:", type=("build", "run"))
